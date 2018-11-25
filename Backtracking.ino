@@ -5,6 +5,17 @@
 // Maze size
 #define N 8
 
+ int maze[N][N] =    {{1, 1, 1, 1, 1, 1, 1, 1},
+                      {1, 1, 1, 1, 1, 1, 1, 1},
+                      {1, 1, 1, 1, 1, 1, 1, 1},
+                      {1, 1, 1, 1, 1, 1, 1, 1},
+                      {1, 1, 1, 1, 1, 1, 1, 1},
+                      {1, 1, 1, 1, 1, 1, 1, 1},
+                      {1, 1, 1, 1, 1, 1, 1, 1},
+                      {1, 1, 1, 1, 1, 1, 1, 1},
+    };
+
+    
 bool solveMazeUtil(int maze[N][N], int x, int y, int sol[N][N]);
 
 /* A utility function to print solution matrix sol[N][N] */
@@ -90,7 +101,18 @@ bool solveMaze(int (*maze)[8]) {
  
  
  
- 
+ void addObstacle() {
+    for (int m = 0; m <2; m++ ) {
+        int i = rand() % 8;
+        int j = rand() % 8;
+        if (maze[i][j] = 1) {
+            maze[i][j] = 0;
+        } else {
+            addObstacle();
+        }
+    }
+
+}
  
  /////////////////////////////
 int DIN = 12;
